@@ -84,6 +84,7 @@ img {
 
 .menu {
     border-bottom: 1px solid #E7E9FC;
+    max-width: 1440px;
 }
 
 .menu-nav {
@@ -104,17 +105,32 @@ img {
     font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
-    color: #2E2F42;
 }
 
 .nav-link {
     display: block;
     padding: 24px 0;
+    position: relative;
+    color: #2E2F42;
+    transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
-.nav-item .link:hover,
-.nav-item .link:focus {
+.nav-link:hover,
+.nav-link:focus {
     color: #404bbf;
+}
+
+.active:hover:after {
+    content: '';
+    display: block;
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    margin-top: 20px;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #404BBF;
 }
 
 .contacts {
@@ -126,6 +142,10 @@ img {
 .contacts-list {
     display: flex;
     gap: 40px;
+}
+
+.contacts-link {
+    transition: color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .contacts-link:hover,
@@ -142,6 +162,12 @@ img {
     background-color: #2e2f42;
     padding-top: 188px;
     padding-bottom: 188px;
+    margin: 0 auto;
+    background-image: linear-gradient(rgba(46, 47, 66, 0.70),
+            rgba(46, 47, 66, 0.70)),
+        url('../images/people-office.jpg');
+    background-size: cover;
+    max-width: 1440px;
 }
 
 .hero-title {
@@ -168,6 +194,8 @@ img {
     padding: 16px 32px;
     display: block;
     margin: 0 auto 0 auto;
+
+    transition: background-color cubic-bezier(0.4, 0, 0.2, 1) 250ms;
 }
 
 .hero-button:hover,
@@ -219,6 +247,14 @@ img {
 }
 
 /* Benefits */
+
+.benefits-icon-box {
+    border-radius: 4px;
+    border: 1px solid #8E8F99;
+    background: #F4F4FD;
+    padding: 24px 100px;
+    margin-bottom: 8px;
+}
 
 .benefits-list {
     display: flex;
